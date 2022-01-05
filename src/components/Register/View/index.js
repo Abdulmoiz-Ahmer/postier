@@ -1,31 +1,72 @@
 import React from "react";
+import Lottie from "react-lottie";
 import { Grid, Image, Button, Checkbox, Form } from "semantic-ui-react";
-
-export const View = function View() {
+export const View = function View({
+  defaultOptions,
+  register,
+  errors,
+  onRegisterSubmit,
+  handleSubmit,
+}) {
   return (
     <Grid textAlign="center" verticalAlign="middle" container>
       <Grid.Row>
         <Grid.Column width={6} textAlign="center">
-          <Image src="https://media.istockphoto.com/vectors/hand-holds-letter-and-inserts-it-into-mailbox-vector-id1128685907?k=20&m=1128685907&s=612x612&w=0&h=YBLFz7Ai3zxSyewqnQSBY0XRUtqtNYnqcbiXGhSadpA=" />
+          <Lottie options={defaultOptions} height={400} width={400} />
         </Grid.Column>
 
-        <Grid.Column color="orange" width={10} textAlign="center">
-          <Form>
-            <Form.Field>
+        <Grid.Column width={10} textAlign="center">
+          <Form onSubmit={handleSubmit(onRegisterSubmit)}>
+            <Form.Field
+              required
+              error={errors?.fullName?.message ? true : false}
+            >
               <label>Full Name</label>
-              <input placeholder="Full Name" />
+              <input placeholder="First Name" {...register("fullName")} />
             </Form.Field>
-            <Form.Input label="PostBoxNumber" placeholder="PostBoxNumber" />
-            <Form.Input label="Password" placeholder="Enter Password" />
-            <Form.Input
-              label="Confirm Password"
-              placeholder="Confirm Password"
-            />
-            <Form.Input label="Email" placeholder="joe@schmoe.com" />
+            <>{errors.fullName?.message}</>
+
+            <Form.Field
+              required
+              error={errors?.postBoxNumber?.message ? true : false}
+            >
+              <label>PostBoxNumber</label>
+              <input
+                placeholder="PostBoxNumber"
+                {...register("postBoxNumber")}
+              />
+            </Form.Field>
+            <>{errors.postBoxNumber?.message}</>
+
+            <Form.Field
+              required
+              error={errors?.password?.message ? true : false}
+            >
+              <label>Password</label>
+              <input placeholder="Password" {...register("password")} />
+            </Form.Field>
+            <>{errors.password?.message}</>
+
+            <Form.Field
+              required
+              error={errors?.confirmPassword?.message ? true : false}
+            >
+              <label>Confirm Password</label>
+              <input
+                placeholder="Confirm Password"
+                {...register("confirmPassword")}
+              />
+            </Form.Field>
+            <>{errors.confirmPassword?.message}</>
+
+            <Form.Field required error={errors?.email?.message ? true : false}>
+              <label>Email</label>
+              <input placeholder="Email" {...register("email")} />
+            </Form.Field>
+            <>{errors?.email?.message}</>
             <Form.Field>
-              <Checkbox label="I agree to the Terms and Conditions" />
+              <Button type="submit">Sign Up</Button>
             </Form.Field>
-            <Button type="submit">Submit</Button>
           </Form>
         </Grid.Column>
       </Grid.Row>
