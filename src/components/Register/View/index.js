@@ -9,13 +9,27 @@ export const View = function View({
   handleSubmit,
 }) {
   return (
-    <Grid textAlign="center" verticalAlign="middle" container>
+    <Grid
+      stackable
+      columns={1}
+      textAlign="center"
+      verticalAlign="middle"
+      style={{ height: "100vh" }}
+    >
       <Grid.Row>
-        <Grid.Column width={6} textAlign="center">
-          <Lottie options={defaultOptions} height={400} width={400} />
-        </Grid.Column>
-
-        <Grid.Column width={10} textAlign="center">
+        <Grid.Column
+          boxStyle
+          width={10}
+          textAlign="center"
+          style={{
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: "blue",
+            borderRadius: "0px 0px 365px 0px",
+            background: "#29e7e7",
+          }}
+        >
           <Form onSubmit={handleSubmit(onRegisterSubmit)}>
             <Form.Field
               required
@@ -65,9 +79,24 @@ export const View = function View({
             </Form.Field>
             <>{errors?.email?.message}</>
             <Form.Field>
-              <Button type="submit">Sign Up</Button>
+              <Button
+                size="large"
+                color="red"
+                content="Red"
+                type="submit"
+                style={{ margin: "10px 0px" }}
+              >
+                Sign Up
+              </Button>
             </Form.Field>
           </Form>
+        </Grid.Column>
+        <Grid.Column
+          width={6}
+          textAlign="center"
+          style={{ height: "100vh", overflow: "hidden" }}
+        >
+          <Lottie options={defaultOptions} height={600} width={600} />
         </Grid.Column>
       </Grid.Row>
     </Grid>
