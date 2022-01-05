@@ -1,6 +1,14 @@
 import React from "react";
 import Lottie from "react-lottie";
-import { Grid, Image, Button, Checkbox, Form } from "semantic-ui-react";
+import {
+  Grid,
+  Image,
+  Button,
+  Checkbox,
+  Form,
+  Segment,
+  Flag,
+} from "semantic-ui-react";
 export const View = function View({
   defaultOptions,
   register,
@@ -96,6 +104,10 @@ export const View = function View({
           textAlign="center"
           style={{ height: "100vh", overflow: "hidden" }}
         >
+          <Segment>
+            <Flag name="pk" />
+            <Flag name="al" />
+          </Segment>
           <Lottie options={defaultOptions} height={600} width={600} />
         </Grid.Column>
       </Grid.Row>
