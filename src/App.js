@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PostBox />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} index />
           <Route path="/register" element={<Register />} />
           <Route path="/letter" element={<Letter />} />
         </Routes>

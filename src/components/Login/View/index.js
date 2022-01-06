@@ -1,9 +1,11 @@
 import React from "react";
 import Lottie from "react-lottie";
 import { Grid, Button, Form } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export const View = function View({
   t,
+  processing,
   transformToCapitalized,
   defaultOptions,
   register,
@@ -45,6 +47,7 @@ export const View = function View({
               </label>
               <input
                 id="inputView"
+                type="password"
                 placeholder={transformToCapitalized(t("password"))}
                 {...register("password")}
               />
@@ -59,17 +62,16 @@ export const View = function View({
                 size="large"
                 color="purple"
                 type="submit"
-                style={{ margin: "10px 0px" }}
+                disabled={processing}
+                loading={processing}
               >
                 {transformToCapitalized(t("login"))}
               </Button>
             </Form.Field>
+            Don't have an account yet!<Link to="/register">Create Account</Link>
           </Form>
         </Grid.Column>
-        <Grid.Column
-          width={6}
-          // style={{ height: "100vh", overflow: "hidden" }}
-        >
+        <Grid.Column width={6}>
           <Lottie options={defaultOptions} height={600} width={600} />
         </Grid.Column>
       </Grid.Row>

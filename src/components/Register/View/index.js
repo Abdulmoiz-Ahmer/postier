@@ -1,9 +1,11 @@
 import React from "react";
 import Lottie from "react-lottie";
 import { Grid, Button, Form } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 export const View = function View({
   t,
+  processing,
   transformToCapitalized,
   defaultOptions,
   register,
@@ -114,10 +116,14 @@ export const View = function View({
                   size="large"
                   color="purple"
                   type="submit"
+                  loading={processing}
+                  disabled={processing}
                 >
                   {transformToCapitalized(t("sign-up"))}
                 </Button>
               </Form.Field>
+              Already have an account!
+              <Link to="/login">Sign In</Link>
             </Form>
           </Grid.Column>
           <Grid.Column width={6}>

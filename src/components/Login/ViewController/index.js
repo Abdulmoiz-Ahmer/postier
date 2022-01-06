@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { View } from "../View";
 import { loginSchema } from "../../../utils";
 import animationData from "../../../assets/animations/letterBox.json";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-semantic-toasts";
 
 export const ViewController = function ({
   t,
   transformToCapitalized,
   loginViewModel,
 }) {
+  const navigate = useNavigate();
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -17,6 +21,11 @@ export const ViewController = function ({
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
+  };
+
+  const [processing, setProcessing] = useState(false);
+  const toggleProcessing = () => {
+    setProcessing((processing) => !processing);
   };
 
   const {
@@ -28,16 +37,24 @@ export const ViewController = function ({
   });
 
   const onLoginSubmit = async ({ email, password }) => {
+    toggleProcessing();
     const result = await loginViewModel.loginWithBasicAuth(email, password);
-    console.log(result, "32");
     if (result.user) {
+      navigate("/");
     } else {
+      toast({
+        title: "Error",
+        description: <p>{result.message}</p>,
+        type: "error",
+      });
     }
+    toggleProcessing();
   };
 
   return (
     <View
       t={t}
+      processing={processing}
       transformToCapitalized={transformToCapitalized}
       defaultOptions={defaultOptions}
       register={register}
