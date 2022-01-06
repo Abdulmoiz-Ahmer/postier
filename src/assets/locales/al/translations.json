@@ -10,5 +10,6 @@
   "email-error": "ju lutemi jepni një adresë emaili",
   "post-box-number-error": "ju lutemi jepni një numër unik numerik të kutisë p.o",
   "password-error": "ju lutemi jepni një fjalëkalim",
-  "confirm-password-error": "ju lutemi jepni një fjalëkalim"
+  "confirm-password-error": "ju lutemi jepni një fjalëkalim",
+  "login":"identifikimi"
 }
