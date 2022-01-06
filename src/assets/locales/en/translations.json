@@ -1,0 +1,14 @@
+{
+  "app-name": "post man",
+  "full-name": "full name",
+  "post-box-number": "post box number",
+  "email": "email",
+  "password": "password",
+  "confirm-password": "confirm password",
+  "sign-up": "sign up",
+  "full-name-error": "please provide a full name",
+  "post-box-number-error": "please provide a unique numeric p.o box number",
+  "email-error": "please provide an email address",
+  "password-error": "please provide a password",
+  "confirm-password-error": "please provide a password"
+}

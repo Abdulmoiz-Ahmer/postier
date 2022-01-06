@@ -1,0 +1,14 @@
+{
+  "app-name": "postier",
+  "full-name": "emri i plotë",
+  "post-box-number": "numri i kutisë postare",
+  "email": "email",
+  "password": "fjalëkalimin",
+  "confirm-password": "konfirmoni fjalëkalimin",
+  "sign-up": "regjistrohu",
+  "full-name-error": "ju lutem jepni një emër të plotë",
+  "email-error": "ju lutemi jepni një adresë emaili",
+  "post-box-number-error": "ju lutemi jepni një numër unik numerik të kutisë p.o",
+  "password-error": "ju lutemi jepni një fjalëkalim",
+  "confirm-password-error": "ju lutemi jepni një fjalëkalim"
+}

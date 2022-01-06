@@ -5,7 +5,7 @@ import { View } from "../View";
 import { registerSchema } from "../../../utils";
 import animationData from "../../../assets/animations/letterBox.json";
 
-export const ViewController = function () {
+export const ViewController = function ({ t, transformToCapitalized }) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -27,6 +27,8 @@ export const ViewController = function () {
 
   return (
     <View
+      t={t}
+      transformToCapitalized={transformToCapitalized}
       defaultOptions={defaultOptions}
       register={register}
       errors={errors}
