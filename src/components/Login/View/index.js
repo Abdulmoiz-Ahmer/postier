@@ -8,7 +8,7 @@ export const View = function View({
   defaultOptions,
   register,
   errors,
-  onRegisterSubmit,
+  onLoginSubmit,
   handleSubmit,
 }) {
   return (
@@ -31,7 +31,7 @@ export const View = function View({
           //   borderRadius: "0px 0px 365px 0px",
           // }}
         >
-          <Form onSubmit={handleSubmit(onRegisterSubmit)}>
+          <Form onSubmit={handleSubmit(onLoginSubmit)}>
             <Form.Field required error={errors?.email?.message ? true : false}>
               <label style={{ color: "#496394" }}>
                 {transformToCapitalized(t("email"))}
@@ -54,6 +54,7 @@ export const View = function View({
                 {transformToCapitalized(t("password"))}
               </label>
               <input
+                type="password"
                 placeholder={transformToCapitalized(t("password"))}
                 {...register("password")}
               />

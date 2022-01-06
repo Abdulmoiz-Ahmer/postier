@@ -6,6 +6,6 @@ export const registerSchema = yup
     email: yup.string().email().required(),
     postBoxNumber: yup.number().positive().integer().required(),
     password: yup.string().required(),
-    confirmPassword: yup.string().required(),
+    confirmPassword: yup.string().oneOf([yup.ref("password"), null]),
   })
   .required();

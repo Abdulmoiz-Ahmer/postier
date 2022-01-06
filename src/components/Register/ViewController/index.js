@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { View } from "../View";
 import { registerSchema } from "../../../utils";
 import animationData from "../../../assets/animations/letterBox.json";
 
-export const ViewController = function ({ t, transformToCapitalized }) {
+export const ViewController = function ({
+  t,
+  transformToCapitalized,
+  registerViewModel,
+}) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -23,7 +27,22 @@ export const ViewController = function ({ t, transformToCapitalized }) {
     resolver: yupResolver(registerSchema),
   });
 
-  const onRegisterSubmit = (data) => console.log(data, data);
+  const onRegisterSubmit = async ({
+    fullName,
+    postBoxNumber,
+    email,
+    password,
+  }) => {
+    const result = await registerViewModel.registerWithBasicAuth(
+      fullName,
+      postBoxNumber,
+      email,
+      password
+    );
+    if (result.user) {
+    } else {
+    }
+  };
 
   return (
     <View

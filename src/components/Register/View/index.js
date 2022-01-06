@@ -88,6 +88,7 @@ export const View = function View({
                 {transformToCapitalized(t("password"))}
               </label>
               <input
+                type="password"
                 placeholder={transformToCapitalized(t("password"))}
                 {...register("password")}
               />
@@ -105,6 +106,7 @@ export const View = function View({
                 {transformToCapitalized(t("confirm-password"))}
               </label>
               <input
+                type="password"
                 placeholder={transformToCapitalized(t("confirm-password"))}
                 {...register("confirmPassword")}
               />

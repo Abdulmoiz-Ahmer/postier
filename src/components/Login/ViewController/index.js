@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { View } from "../View";
-import { registerSchema } from "../../../utils";
+import { loginSchema } from "../../../utils";
 import animationData from "../../../assets/animations/letterBox.json";
 
-export const ViewController = function ({ t, transformToCapitalized }) {
+export const ViewController = function ({
+  t,
+  transformToCapitalized,
+  loginViewModel,
+}) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -20,10 +24,16 @@ export const ViewController = function ({ t, transformToCapitalized }) {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(registerSchema),
+    resolver: yupResolver(loginSchema),
   });
 
-  const onRegisterSubmit = (data) => console.log(data, data);
+  const onLoginSubmit = async ({ email, password }) => {
+    const result = await loginViewModel.loginWithBasicAuth(email, password);
+    console.log(result, "32");
+    if (result.user) {
+    } else {
+    }
+  };
 
   return (
     <View
@@ -33,7 +43,7 @@ export const ViewController = function ({ t, transformToCapitalized }) {
       register={register}
       errors={errors}
       handleSubmit={handleSubmit}
-      onRegisterSubmit={onRegisterSubmit}
+      onLoginSubmit={onLoginSubmit}
     />
   );
 };

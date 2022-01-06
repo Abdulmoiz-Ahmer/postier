@@ -1,4 +1,5 @@
 import React from "react";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Model } from "../Model";
 import { ViewModel } from "../ViewModel";
 import { ViewController } from "../ViewController";
@@ -7,7 +8,15 @@ import { transformToCapitalized } from "../../../utils";
 
 export const RegisterViewProvider = function () {
   const { t } = useTranslation();
+  const registerModel = new Model(getAuth(), createUserWithEmailAndPassword);
+  const registerViewModel = new ViewModel(registerModel);
+
+
   return (
-    <ViewController t={t} transformToCapitalized={transformToCapitalized} />
+    <ViewController
+      t={t}
+      transformToCapitalized={transformToCapitalized}
+      registerViewModel={registerViewModel}
+    />
   );
 };
