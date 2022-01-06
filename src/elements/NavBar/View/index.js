@@ -6,13 +6,21 @@ export const View = function View({
   transformToCapitalized,
 }) {
   return (
-    <Menu size="huge">
-      <Menu.Item header style={{ color: "#642eec" }}>
+    <Menu size="huge" id="navBar">
+      <Menu.Item id="appName">
         {transformToCapitalized(t("app-name"))}
       </Menu.Item>
       <Menu.Item position="right">
-        <Flag name="pk" onClick={() => changeLanguage("en")} />
-        <Flag name="al" onClick={() => changeLanguage("al")} />
+        <Flag
+          id="languageChoice"
+          name="pk"
+          onClick={() => changeLanguage("en")}
+        />
+        <Flag
+          id="languageChoice"
+          name="al"
+          onClick={() => changeLanguage("al")}
+        />
       </Menu.Item>
     </Menu>
   );

@@ -20,23 +20,14 @@ export const View = function View({
       style={{ height: "100vh" }}
     >
       <Grid.Row>
-        <Grid.Column
-          boxstyle={"true"}
-          width={10}
-          textAlign="center"
-          // style={{
-          //   height: "100vh",
-          //   display: "flex",
-          //   alignItems: "center",
-          //   borderRadius: "0px 0px 365px 0px",
-          // }}
-        >
+        <Grid.Column boxstyle={"true"} width={10} textAlign="center">
           <Form onSubmit={handleSubmit(onLoginSubmit)}>
             <Form.Field required error={errors?.email?.message ? true : false}>
               <label style={{ color: "#496394" }}>
                 {transformToCapitalized(t("email"))}
               </label>
               <input
+                id="inputView"
                 placeholder={transformToCapitalized(t("email"))}
                 {...register("email")}
               />
@@ -45,7 +36,6 @@ export const View = function View({
                   transformToCapitalized(t("email-error"))}
               </span>
             </Form.Field>
-
             <Form.Field
               required
               error={errors?.password?.message ? true : false}
@@ -54,7 +44,7 @@ export const View = function View({
                 {transformToCapitalized(t("password"))}
               </label>
               <input
-                type="password"
+                id="inputView"
                 placeholder={transformToCapitalized(t("password"))}
                 {...register("password")}
               />
@@ -63,9 +53,9 @@ export const View = function View({
                   transformToCapitalized(t("password-error"))}
               </span>
             </Form.Field>
-
             <Form.Field>
               <Button
+                id="btnSubmit"
                 size="large"
                 color="purple"
                 type="submit"

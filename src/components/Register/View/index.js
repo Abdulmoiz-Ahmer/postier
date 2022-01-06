@@ -12,129 +12,119 @@ export const View = function View({
   handleSubmit,
 }) {
   return (
-    <Grid
-      stackable
-      columns={1}
-      textAlign="center"
-      verticalAlign="middle"
-      style={{ height: "100vh" }}
-    >
-      <Grid.Row>
-        <Grid.Column
-          boxstyle={"true"}
-          width={10}
-          textAlign="center"
-          // style={{
-          //   height: "100vh",
-          //   display: "flex",
-          //   alignItems: "center",
-          //   borderRadius: "0px 0px 365px 0px",
-          // }}
-        >
-          <Form onSubmit={handleSubmit(onRegisterSubmit)}>
-            <Form.Field
-              required
-              error={errors?.fullName?.message ? true : false}
-            >
-              <label style={{ color: "#496394" }}>
-                {transformToCapitalized(t("full-name"))}
-              </label>
-              <input
-                placeholder={transformToCapitalized(t("full-name"))}
-                {...register("fullName")}
-              />
-              <span style={{ color: "#496394" }}>
-                {errors.fullName?.message &&
-                  transformToCapitalized(t("full-name-error"))}
-              </span>
-            </Form.Field>
-
-            <Form.Field required error={errors?.email?.message ? true : false}>
-              <label style={{ color: "#496394" }}>
-                {transformToCapitalized(t("email"))}
-              </label>
-              <input
-                placeholder={transformToCapitalized(t("email"))}
-                {...register("email")}
-              />
-              <span style={{ color: "#496394" }}>
-                {errors?.email?.message &&
-                  transformToCapitalized(t("email-error"))}
-              </span>
-            </Form.Field>
-
-            <Form.Field
-              required
-              error={errors?.postBoxNumber?.message ? true : false}
-            >
-              <label style={{ color: "#496394" }}>
-                {transformToCapitalized(t("post-box-number"))}
-              </label>
-              <input
-                placeholder={transformToCapitalized(t("post-box-number"))}
-                {...register("postBoxNumber")}
-              />
-              <span style={{ color: "#496394" }}>
-                {errors?.postBoxNumber?.message &&
-                  transformToCapitalized(t("post-box-number-error"))}
-              </span>
-            </Form.Field>
-
-            <Form.Field
-              required
-              error={errors?.password?.message ? true : false}
-            >
-              <label style={{ color: "#496394" }}>
-                {transformToCapitalized(t("password"))}
-              </label>
-              <input
-                type="password"
-                placeholder={transformToCapitalized(t("password"))}
-                {...register("password")}
-              />
-              <span style={{ color: "#496394" }}>
-                {errors.password?.message &&
-                  transformToCapitalized(t("password-error"))}
-              </span>
-            </Form.Field>
-
-            <Form.Field
-              required
-              error={errors?.confirmPassword?.message ? true : false}
-            >
-              <label style={{ color: "#496394" }}>
-                {transformToCapitalized(t("confirm-password"))}
-              </label>
-              <input
-                type="password"
-                placeholder={transformToCapitalized(t("confirm-password"))}
-                {...register("confirmPassword")}
-              />
-              <span style={{ color: "#496394" }}>
-                {errors?.confirmPassword?.message &&
-                  t("confirm-password-error")}
-              </span>
-            </Form.Field>
-
-            <Form.Field>
-              <Button
-                size="large"
-                color="purple"
-                type="submit"
-                style={{ margin: "10px 0px" }}
+    <>
+      <Grid
+        stackable
+        columns={1}
+        textAlign="center"
+        verticalAlign="middle"
+        style={{ height: "100vh" }}
+      >
+        <Grid.Row>
+          <Grid.Column boxstyle={"true"} width={10} textAlign="center">
+            <Form onSubmit={handleSubmit(onRegisterSubmit)}>
+              <Form.Field
+                required
+                error={errors?.fullName?.message ? true : false}
               >
-                {transformToCapitalized(t("sign-up"))}
-              </Button>
-            </Form.Field>
-          </Form>
-        </Grid.Column>
-        <Grid.Column
-          width={6}
-          // style={{ height: "100vh", overflow: "hidden" }}
-        >
-          <Lottie options={defaultOptions} height={600} width={600} />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+                <label style={{ color: "#496394" }}>
+                  {transformToCapitalized(t("full-name"))}
+                </label>
+                <input
+                  id="inputView"
+                  placeholder={transformToCapitalized(t("full-name"))}
+                  {...register("fullName")}
+                />
+                <span style={{ color: "#496394" }}>
+                  {errors.fullName?.message &&
+                    transformToCapitalized(t("full-name-error"))}
+                </span>
+              </Form.Field>
+              <Form.Field
+                required
+                error={errors?.email?.message ? true : false}
+              >
+                <label style={{ color: "#496394" }}>
+                  {transformToCapitalized(t("email"))}
+                </label>
+                <input
+                  id="inputView"
+                  placeholder={transformToCapitalized(t("email"))}
+                  {...register("email")}
+                />
+                <span style={{ color: "#496394" }}>
+                  {errors?.email?.message &&
+                    transformToCapitalized(t("email-error"))}
+                </span>
+              </Form.Field>
+              <Form.Field
+                required
+                error={errors?.postBoxNumber?.message ? true : false}
+              >
+                <label style={{ color: "#496394" }}>
+                  {transformToCapitalized(t("post-box-number"))}
+                </label>
+                <input
+                  id="inputView"
+                  placeholder={transformToCapitalized(t("post-box-number"))}
+                  {...register("postBoxNumber")}
+                />
+                <span style={{ color: "#496394" }}>
+                  {errors?.postBoxNumber?.message &&
+                    transformToCapitalized(t("post-box-number-error"))}
+                </span>
+              </Form.Field>
+              <Form.Field
+                required
+                error={errors?.password?.message ? true : false}
+              >
+                <label style={{ color: "#496394" }}>
+                  {transformToCapitalized(t("password"))}
+                </label>
+                <input
+                  id="inputView"
+                  placeholder={transformToCapitalized(t("password"))}
+                  {...register("password")}
+                />
+                <span style={{ color: "#496394" }}>
+                  {errors.password?.message &&
+                    transformToCapitalized(t("password-error"))}
+                </span>
+              </Form.Field>
+              <Form.Field
+                required
+                error={errors?.confirmPassword?.message ? true : false}
+              >
+                <label style={{ color: "#496394" }}>
+                  {transformToCapitalized(t("confirm-password"))}
+                </label>
+                <input
+                  id="inputView"
+                  placeholder={transformToCapitalized(t("confirm-password"))}
+                  {...register("confirmPassword")}
+                />
+                <span style={{ color: "#496394" }}>
+                  {errors?.confirmPassword?.message &&
+                    t("confirm-password-error")}
+                </span>
+              </Form.Field>
+              <Form.Field>
+                <Button
+                  id="btnSubmit"
+                  size="large"
+                  color="purple"
+                  type="submit"
+                >
+                  {transformToCapitalized(t("sign-up"))}
+                </Button>
+              </Form.Field>
+            </Form>
+          </Grid.Column>
+          <Grid.Column width={6}>
+            <Lottie options={defaultOptions} height={600} width={600} />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </>
   );
 };
