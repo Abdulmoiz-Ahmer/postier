@@ -36,5 +36,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "i18next": "^21.6.5",
+    "react-i18next": "^11.15.3"
   }
 }
