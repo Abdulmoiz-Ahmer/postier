@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import { Grid, Button, Form } from "semantic-ui-react";
+import { Grid, Button, Form, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export const View = function View({
@@ -64,11 +64,20 @@ export const View = function View({
                 type="submit"
                 disabled={processing}
                 loading={processing}
+                animated
               >
-                {transformToCapitalized(t("login"))}
+                <Button.Content visible>
+                  {transformToCapitalized(t("login"))}
+                </Button.Content>
+                <Button.Content hidden>
+                  <Icon name="sign-in" />
+                </Button.Content>
               </Button>
             </Form.Field>
-            Don't have an account yet!<Link to="/register">Create Account</Link>
+            {transformToCapitalized(t("doesn't-have-account"))}{" "}
+            <Link to="/register">
+              {transformToCapitalized(t("create-account"))}
+            </Link>
           </Form>
         </Grid.Column>
         <Grid.Column width={6}>

@@ -11,5 +11,8 @@
   "email-error": "please provide an email address",
   "password-error": "please provide a password",
   "confirm-password-error": "please provide a password",
-  "login": "login"
+  "login": "login",
+  "already-have-account": "already have an account!",
+  "doesn't-have-account": "don't have an account yet!",
+  "create-account":"create account"
 }
