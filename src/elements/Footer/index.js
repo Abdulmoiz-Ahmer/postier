@@ -2,7 +2,11 @@ import React from "react";
 
 export const Footer = function () {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg
+      className="footerSvg"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+    >
       <path
         fill="#29226d"
         fill-opacity="1"

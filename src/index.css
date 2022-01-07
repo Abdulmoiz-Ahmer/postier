@@ -6,6 +6,7 @@
 }
 body {
   font-family: "Lobster", cursive;
+  font-family: "Londrina Outline", cursive;
   font-family: "Open Sans", sans-serif;
   font-family: "Poppins", sans-serif;
 }
@@ -27,6 +28,8 @@ body {
 .ui.grid {
   margin-top: initial !important;
   margin-bottom: initial !important;
+  position: relative;
+  z-index: 2;
 }
 
 .ui.grid > .row {
@@ -116,4 +119,153 @@ body {
   padding: 11px;
   border: 1px solid #6358ee;
   border-radius: 5px;
+}
+.footerSvg {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.mailBox {
+  margin-right: 20px;
+}
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  padding-left: initial !important;
+  padding-right: initial !important;
+}
+/* errorpage */
+
+.ErrorText {
+  font-family: "Londrina Outline";
+  font-size: 13rem;
+  font-weight: 700;
+  color: #6f64f4;
+  padding: 150px 20px 10px;
+}
+
+.PlainText {
+  font-size: 2rem;
+  font-family: "Lobster";
+  color: #6f64f4;
+  font-weight: 600;
+}
+.ErrorBox {
+  position: relative;
+  z-index: 22;
+  padding: 20px;
+}
+.tabIcon {
+  color: #22178d !important;
+}
+/* postBox */
+#postCardImage {
+  margin: initial;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+#postContent {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#postList {
+  margin: 0.1em 0.5em 0.5em 1.1em;
+  flex-direction: column;
+}
+#postCard {
+  width: 100%;
+  margin: initial;
+  background: linear-gradient(45deg, #e3dcdc, #6f64ff);
+  border: initial;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 1px #0a184a;
+}
+#postCardInfo {
+  text-align: initial;
+}
+.postCardIcon {
+  display: flex;
+  width: 100%;
+}
+#postCardDetail {
+  border-top: initial;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: initial;
+  padding: 0 1em 1em 1em;
+}
+#postTime {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-weight: 600;
+}
+#postFav,
+#postCopy,
+#postDel {
+  margin-right: 18px;
+}
+.postCardBind {
+  display: flex;
+  align-items: center;
+}
+#postBoxView {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+#postName {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+#postMsg {
+  font-size: 1em;
+  font-weight: 400;
+  font-family: "Poppins";
+  padding-top: 12px;
+  color: #0a184a;
+}
+
+.postCategory {
+  font-family: "Poppins" !important;
+}
+.tabIcon {
+  font-size: 1.9em !important;
+}
+
+#postBoxView .ui.steps .step {
+  background: linear-gradient(45deg, #e3dcdc, #a9a0ee);
+}
+.ui.steps .step.active:after {
+  background: #b2a9eb;
+}
+#postFav {
+  color: #f621ff;
+}
+
+#postCopy {
+  color: #8036db;
+}
+
+#postDel {
+  color: #95082d;
+}
+/* ================================ Media Queries================================== */
+
+@media (max-width: 992px) {
+  #contentBox1 {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .ErrorText {
+    font-size: 10rem;
+    padding: 80px 20px 10px;
+  }
 }
