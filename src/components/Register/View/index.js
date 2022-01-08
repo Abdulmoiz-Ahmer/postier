@@ -4,6 +4,10 @@ import { Grid, Button, Form } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export const View = function View({
+  buttonStyle = {
+    width: "100%",
+    height: "auto",
+  },
   t,
   processing,
   transformToCapitalized,
@@ -15,15 +19,9 @@ export const View = function View({
 }) {
   return (
     <>
-      <Grid
-        stackable
-        columns={1}
-        textAlign="center"
-        verticalAlign="middle"
-        style={{ height: "100vh" }}
-      >
+      <Grid>
         <Grid.Row>
-          <Grid.Column boxstyle={"true"} width={10} textAlign="center">
+          <Grid.Column mobile={16} boxstyle={"true"} computer={10}>
             <Form onSubmit={handleSubmit(onRegisterSubmit)}>
               <Form.Field
                 required
@@ -126,8 +124,13 @@ export const View = function View({
               <Link to="/login">Sign In</Link>
             </Form>
           </Grid.Column>
-          <Grid.Column width={6}>
-            <Lottie options={defaultOptions} height={600} width={600} />
+          <Grid.Column id="contentBox1" computer={6}>
+            <Lottie
+              options={defaultOptions}
+              height={600}
+              width={600}
+              style={buttonStyle}
+            />
           </Grid.Column>
         </Grid.Row>
       </Grid>

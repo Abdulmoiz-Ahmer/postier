@@ -4,6 +4,7 @@ import { Login } from "./pages";
 import { Register } from "./pages";
 import { PostBox } from "./pages";
 import { Letter } from "./pages";
+import { ErrorPage } from "./pages";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/home" element={<PostBox />} />
           <Route path="/register" element={<Register />} />
           <Route path="/letter" element={<Letter />} />
+          <Route path="/ErrorPage" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </Layout>
