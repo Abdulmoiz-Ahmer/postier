@@ -256,6 +256,30 @@ body {
 #postDel {
   color: #95082d;
 }
+.logMsg {
+  font-family: "Poppins";
+  font-size: 1rem;
+  color: #93aac8;
+}
+#choiceText {
+  color: #ffffff;
+}
+.pipeSeparator {
+  padding-right: 10px;
+  font-size: 30px;
+  color: #f0f8ff29;
+}
+
+#logBtn {
+  width: 61px;
+  height: initial;
+  padding: 11px 10px;
+  border: 1px solid #6358ee;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: transparent;
+  color: #b2c0ef;
+}
 /* ================================ Media Queries================================== */
 
 @media (max-width: 992px) {
