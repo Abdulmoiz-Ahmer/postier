@@ -72,8 +72,10 @@ export const View = function View({
                 </Button.Content>
               </Button>
             </Form.Field>
-            {transformToCapitalized(t("doesn't-have-account"))}{" "}
-            <Link to="/register">
+            <span className="logMsg">
+              {transformToCapitalized(t("doesn't-have-account"))}{" "}
+            </span>
+            <Link id="choiceText" to="/register">
               {transformToCapitalized(t("create-account"))}
             </Link>
           </Form>
