@@ -6,12 +6,7 @@ export class Model {
 
   async loginWithBasicAuth(email, password) {
     try {
-      const result = await this.signInWithEmailAndPassword(
-        this.auth,
-        email,
-        password
-      );
-      return result;
+      return await this.signInWithEmailAndPassword(this.auth, email, password);
     } catch (e) {
       return e;
     }

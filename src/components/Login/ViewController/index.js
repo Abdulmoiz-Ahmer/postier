@@ -40,6 +40,7 @@ export const ViewController = function ({
     toggleProcessing();
     const result = await loginViewModel.loginWithBasicAuth(email, password);
     if (result.user) {
+      console.log(result);
       navigate("/home");
     } else {
       toast({
