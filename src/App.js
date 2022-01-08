@@ -17,7 +17,7 @@ function App() {
           <Route path="/home" element={<PostBox />} />
           <Route path="/register" element={<Register />} />
           <Route path="/letter" element={<Letter />} />
-          <Route path="/ErrorPage" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </Layout>
