@@ -126,8 +126,13 @@ export const View = function View({
                   </Button.Content>
                 </Button>
               </Form.Field>
-              {transformToCapitalized(t("already-have-account"))}{" "}
-              <Link to="/login"> {transformToCapitalized(t("login"))}</Link>
+              <span className="logMsg">
+                {transformToCapitalized(t("already-have-account"))}{" "}
+              </span>
+              <Link id="choiceText" to="/login">
+                {" "}
+                {transformToCapitalized(t("login"))}
+              </Link>
             </Form>
           </Grid.Column>
           <Grid.Column id="contentBox1" computer={6}>
