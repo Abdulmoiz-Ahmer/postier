@@ -1,6 +1,5 @@
 import React from "react";
-import Lottie from "react-lottie";
-import { Grid, Card, Button } from "semantic-ui-react";
+import { Grid, Card, Button, Input, Form, TextArea } from "semantic-ui-react";
 
 export const View = function View({
   buttonStyle = {
@@ -17,13 +16,19 @@ export const View = function View({
           <Card.Content className="letterPosition">
             <h4 className="senderInfo" floated="left">
               To:
-              <span className="senderInfoName">person</span>
+              <Input className="senderInfoName" transparent />
             </h4>
           </Card.Content>
 
-          <Card.Description>
-            this the card content.................................
-          </Card.Description>
+          <Form>
+            <TextArea placeholder="Tell us more" />
+          </Form>
+          <Card.Content className="letterPosition letterFrom">
+            <h4 className="senderInfo" floated="left">
+              From:
+              <Input className="senderInfoName" transparent />
+            </h4>
+          </Card.Content>
           <Card.Content className="letterBtnPosition">
             <Button className="btnSend">Send</Button>
           </Card.Content>
