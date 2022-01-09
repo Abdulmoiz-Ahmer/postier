@@ -14,7 +14,11 @@ body {
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+    
 } */
+body ::-webkit-scrollbar {
+  -webkit-appearance: initial !important;
+}
 .ui.form {
   width: 100% !important;
   max-width: 420px !important;
@@ -30,6 +34,7 @@ body {
   margin-bottom: initial !important;
   position: relative;
   z-index: 2;
+  padding: 0px 7px;
 }
 
 .ui.grid > .row {
@@ -94,10 +99,14 @@ body {
   font-family: "Lobster";
   font-size: 27px;
   color: #6f64ff;
+  padding: 0.92857143em 0;
 }
-#inputView {
-  padding: 14px;
-  background: #2a3664;
+#languageOption {
+  padding: 0.92857143em 0;
+}
+.inputView {
+  padding: 14px !important;
+  background: #2a3664 !important;
   color: #93aac8 !important;
   font-size: 16px !important;
 
@@ -214,10 +223,6 @@ body {
   display: flex;
   align-items: center;
 }
-#postBoxView {
-  margin-right: 20px;
-  margin-left: 20px;
-}
 
 #postName {
   font-family: "Poppins";
@@ -313,18 +318,70 @@ body {
   background: #d2c7f5a8;
   border: 1px solid #8036dd;
 }
-#postBoxView .ui.pagination.menu {
+#postPagination {
   justify-content: flex-end;
   display: flex;
   background: transparent;
+  position: relative;
+  z-index: 22;
 }
-#postBoxView .ui.pagination.menu .item {
+#postPagination .item {
   min-width: 2em;
   text-align: center;
   background: #bab1e9;
   font-family: "Poppins";
   color: #0a184a;
 }
+#letterBox {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+/* letterbox */
+#letterBox .letterContent {
+  width: 100%;
+
+  /* background: #74aceb;
+  border-radius: 21px;
+  border: initial;
+  box-shadow: 1px 1px 12px 1px #060514; */
+  background-image: url(./assets/images/OLD\ PAPER.png);
+  background-size: cover;
+}
+
+.senderInfo {
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #0a184a;
+}
+
+#letterBox .btnSend {
+  background: #6f64ff;
+  color: azure;
+  font-family: "Poppins";
+  font-size: 1.1em;
+}
+#letterBox .letterBtnPosition {
+  margin: 25px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#letterBox .letterPosition {
+  display: flex;
+  padding: 25px;
+}
+
+#letterBox .description {
+  font-size: 1em;
+  font-family: "Poppins";
+  font-weight: 400;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 29px;
+}
+
 /* ================================ Media Queries================================== */
 
 @media (max-width: 1500px) {
@@ -346,13 +403,17 @@ body {
     flex-direction: row;
   }
   #postList {
-    margin: 0.5em 0;
+    margin: 4.5em 0;
   }
   #postBoxView .ui.vertical.steps .step:first-child {
     border-radius: 0.5em 0 0 0.5em;
   }
   #postBoxView .ui.vertical.steps .step:last-child {
     border-radius: 0 0.5em 0.5em 0;
+  }
+  #postPagination {
+    right: -7px;
+    top: 8rem;
   }
 }
 
@@ -370,7 +431,7 @@ body {
     justify-content: center;
     padding: 0.9em 1em;
   }
-  #postBoxView .ui.pagination.menu .item {
+  #postPagination .item {
     margin-top: 10px;
     font-size: 11px;
   }

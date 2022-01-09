@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import { Grid, Card, Icon } from "semantic-ui-react";
+import { Grid, Card, Button } from "semantic-ui-react";
 
 export const View = function View({
   buttonStyle = {
@@ -11,26 +11,24 @@ export const View = function View({
   defaultOptions,
 }) {
   return (
-    <Grid>
-      <Grid.Row>
-        <Grid.Column mobile={16} boxstyle={"true"} computer={10}>
-          <Card>
-            <Card.Content header="About Amy" />
-            {/* <Card.Content description={description} /> */}
-            <Card.Content extra>
-              <Icon name="user" />4 Friends
-            </Card.Content>
-          </Card>
-        </Grid.Column>
-        <Grid.Column id="contentBox1" computer={6}>
-          {/* <Lottie
-            options={defaultOptions}
-            height={600}
-            width={600}
-            style={buttonStyle}
-          /> */}
-        </Grid.Column>
-      </Grid.Row>
+    <Grid id="letterBox">
+      <Grid.Column mobile={16} boxstyle={"true"} computer={10}>
+        <Card className="letterContent">
+          <Card.Content className="letterPosition">
+            <h4 className="senderInfo" floated="left">
+              To:
+              <span className="senderInfoName">person</span>
+            </h4>
+          </Card.Content>
+
+          <Card.Description>
+            this the card content.................................
+          </Card.Description>
+          <Card.Content className="letterBtnPosition">
+            <Button className="btnSend">Send</Button>
+          </Card.Content>
+        </Card>
+      </Grid.Column>
     </Grid>
   );
 };
