@@ -8,7 +8,7 @@ import {
   Button,
   Pagination,
 } from "semantic-ui-react";
-export const View = function View() {
+export const View = function ({ transformToCapitalized, t }) {
   return (
     <Grid id="postBoxView" columns={2}>
       <Grid.Row>
@@ -22,14 +22,18 @@ export const View = function View() {
             <Step>
               <Icon name="mail" className="mailIcon tabIcon" />
               <Step.Content>
-                <Step.Title className="postCategory">Inbox</Step.Title>
+                <Step.Title className="postCategory">
+                  {transformToCapitalized(t("inbox"))}
+                </Step.Title>
               </Step.Content>
             </Step>
 
             <Step active>
               <Icon name="send" className="sendIcon tabIcon" />
               <Step.Content>
-                <Step.Title className="postCategory">Outbox</Step.Title>
+                <Step.Title className="postCategory">
+                  {transformToCapitalized(t("outbox"))}
+                </Step.Title>
               </Step.Content>
             </Step>
           </Step.Group>
@@ -75,9 +79,7 @@ export const View = function View() {
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
                   <Icon id="postFav" name="favorite" />
-                  <Icon name="favorite" />
                   <Icon id="postDel" name="user delete" />
-                  <Icon name="user delete" />
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>
@@ -106,10 +108,8 @@ export const View = function View() {
               </Card.Content>
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
-                  <Icon id="postFav" name="favorite" />
                   <Icon name="favorite" />
                   <Icon id="postDel" name="user delete" />
-                  <Icon name="user delete" />
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>

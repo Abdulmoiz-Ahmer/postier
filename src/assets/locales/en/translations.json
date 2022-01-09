@@ -14,5 +14,7 @@
   "login": "login",
   "already-have-account": "already have an account!",
   "doesn't-have-account": "don't have an account yet!",
-  "create-account":"create account"
+  "create-account": "create account",
+  "inbox": "postbox",
+  "outbox": "post"
 }

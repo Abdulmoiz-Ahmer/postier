@@ -14,5 +14,7 @@
   "login": "identifikimi",
   "already-have-account": "posedoni një llogari!",
   "doesn't-have-account": "nuk keni ende një llogari!",
-  "create-account": "krijo llogari"
+  "create-account": "krijo llogari",
+  "inbox": "kuti postare",
+  "outbox": "postim"
 }
