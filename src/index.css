@@ -203,6 +203,7 @@ body {
   justify-content: flex-end;
   width: 100%;
   font-weight: 600;
+  color: #0a184ac4;
 }
 #postFav,
 #postCopy,
@@ -222,6 +223,7 @@ body {
   font-family: "Poppins";
   font-weight: 500;
   font-size: 1.2em;
+  color: #0a184a;
 }
 
 #postMsg {
@@ -246,15 +248,14 @@ body {
   background: #b2a9eb;
 }
 #postFav {
-  color: #f621ff;
+  color: #6f64ff;
 }
-
 #postCopy {
   color: #8036db;
 }
 
 #postDel {
-  color: #95082d;
+  color: #e52727;
 }
 .logMsg {
   font-family: "Poppins";
@@ -280,16 +281,97 @@ body {
   background: transparent;
   color: #b2c0ef;
 }
+.ui.steps .step.active .title {
+  color: #8036db !important;
+}
+.postCardBox {
+  display: flex;
+  justify-content: space-between;
+}
+.postPoNum {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 600;
+  color: #0a184ac4;
+}
+
+.postPo {
+  padding-left: 4px;
+  color: #e2dbdc;
+}
+.fixedBtn {
+  position: fixed;
+  right: 27px;
+  bottom: 35px;
+  z-index: 99;
+}
+#postBoxView .fixedBtnBtn {
+  width: 2em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: #d2c7f5a8;
+  border: 1px solid #8036dd;
+}
+#postBoxView .ui.pagination.menu {
+  justify-content: flex-end;
+  display: flex;
+  background: transparent;
+}
+#postBoxView .ui.pagination.menu .item {
+  min-width: 2em;
+  text-align: center;
+  background: #bab1e9;
+  font-family: "Poppins";
+  color: #0a184a;
+}
 /* ================================ Media Queries================================== */
 
-@media (max-width: 992px) {
-  #contentBox1 {
-    display: none;
+@media (max-width: 1500px) {
+  #postBoxView .ui.vertical.steps .step {
+    justify-content: center;
+    padding: 1.14285714em 1em;
+    display: flex;
+    align-items: center;
+  }
+  .tabIcon {
+    font-size: 1.5em !important;
+  }
+  #postCategory {
+    font-size: 16px !important;
   }
 }
+@media (max-width: 1200px) {
+  #postBoxView .ui.vertical.steps {
+    flex-direction: row;
+  }
+  #postList {
+    margin: 0.5em 0;
+  }
+  #postBoxView .ui.vertical.steps .step:first-child {
+    border-radius: 0.5em 0 0 0.5em;
+  }
+  #postBoxView .ui.vertical.steps .step:last-child {
+    border-radius: 0 0.5em 0.5em 0;
+  }
+}
+
 @media (max-width: 992px) {
   .ErrorText {
     font-size: 10rem;
     padding: 80px 20px 10px;
+  }
+  #contentBox1 {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  #postBoxView .ui.vertical.steps .step {
+    justify-content: center;
+    padding: 0.9em 1em;
+  }
+  #postBoxView .ui.pagination.menu .item {
+    margin-top: 10px;
+    font-size: 11px;
   }
 }

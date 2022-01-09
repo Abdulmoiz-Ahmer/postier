@@ -1,11 +1,24 @@
 import React from "react";
-import { Icon, Grid, Step, Image, Card, Button } from "semantic-ui-react";
+import {
+  Icon,
+  Grid,
+  Step,
+  Image,
+  Card,
+  Button,
+  Pagination,
+} from "semantic-ui-react";
 export const View = function View() {
   return (
     <Grid id="postBoxView" columns={2}>
       <Grid.Row>
-        <Grid.Column computer={2} id="postContent">
-          <Step.Group vertical size="large" floated="left">
+        <Grid.Column
+          widescreen={2}
+          largeScreen={2}
+          computer={16}
+          id="postContent"
+        >
+          <Step.Group vertical size="large" floated="left" unstackable>
             <Step>
               <Icon name="mail" className="mailIcon tabIcon" />
               <Step.Content>
@@ -22,18 +35,37 @@ export const View = function View() {
           </Step.Group>
         </Grid.Column>
 
-        <Grid.Column computer={14} id="postContent1">
+        <Grid.Column
+          widescreen={14}
+          largeScreen={14}
+          computer={16}
+          id="postContent1"
+        >
+          <Pagination
+            boundaryRange={0}
+            defaultActivePage={1}
+            ellipsisItem={null}
+            firstItem={null}
+            lastItem={null}
+            siblingRange={1}
+            totalPages={10}
+          />
           <Card.Group id="postList">
             <Card id="postCard">
               <Card.Content id="postCardInfo">
-                <div className="postCardBind">
-                  <Image
-                    id="postCardImage"
-                    floated="left"
-                    size="mini"
-                    src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-                  />
-                  <Card.Header id="postName">Steve Sanders</Card.Header>
+                <div className="postCardBox">
+                  <div className="postCardBind">
+                    <Image
+                      id="postCardImage"
+                      floated="left"
+                      size="mini"
+                      src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                    />
+                    <Card.Header id="postName">Steve Sanders</Card.Header>
+                  </div>
+                  <p className="postPoNum">
+                    PO.Box:<span className="postPo">111334</span>
+                  </p>
                 </div>
                 <Card.Description id="postMsg">
                   Steve wants to add you to the group{" "}
@@ -43,8 +75,9 @@ export const View = function View() {
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
                   <Icon id="postFav" name="favorite" />
-                  <Icon id="postCopy" name="copy" />
+                  <Icon name="favorite" />
                   <Icon id="postDel" name="user delete" />
+                  <Icon name="user delete" />
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>
@@ -52,14 +85,19 @@ export const View = function View() {
             {/* another card */}
             <Card id="postCard">
               <Card.Content id="postCardInfo">
-                <div className="postCardBind">
-                  <Image
-                    id="postCardImage"
-                    floated="left"
-                    size="mini"
-                    src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-                  />
-                  <Card.Header id="postName">Steve Sanders</Card.Header>
+                <div className="postCardBox">
+                  <div className="postCardBind">
+                    <Image
+                      id="postCardImage"
+                      floated="left"
+                      size="mini"
+                      src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                    />
+                    <Card.Header id="postName">Steve Sanders</Card.Header>
+                  </div>
+                  <p className="postPoNum">
+                    PO.Box:<span className="postPo">111334</span>
+                  </p>
                 </div>
                 <Card.Description id="postMsg">
                   Steve wants to add you to the group{" "}
@@ -69,12 +107,16 @@ export const View = function View() {
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
                   <Icon id="postFav" name="favorite" />
-                  <Icon id="postCopy" name="copy" />
+                  <Icon name="favorite" />
                   <Icon id="postDel" name="user delete" />
+                  <Icon name="user delete" />
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>
             </Card>
+            <Button.Group className="fixedBtn" floated="right">
+              <Button className="fixedBtnBtn" size="large"></Button>
+            </Button.Group>
           </Card.Group>
         </Grid.Column>
       </Grid.Row>
