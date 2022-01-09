@@ -12,7 +12,7 @@ export const View = function View({
       <Menu.Item id="appName">
         {transformToCapitalized(t("app-name"))}
       </Menu.Item>
-      <Menu.Item position="right">
+      <Menu.Item id="languageOption" position="right">
         <Flag
           id="languageChoice"
           name="pk"

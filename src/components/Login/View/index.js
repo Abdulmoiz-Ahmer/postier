@@ -27,7 +27,7 @@ export const View = function View({
                 {transformToCapitalized(t("email"))}
               </label>
               <input
-                id="inputView"
+                className="inputView"
                 placeholder={transformToCapitalized(t("email"))}
                 {...register("email")}
               />
@@ -44,7 +44,7 @@ export const View = function View({
                 {transformToCapitalized(t("password"))}
               </label>
               <input
-                id="inputView"
+                class="inputView"
                 type="password"
                 placeholder={transformToCapitalized(t("password"))}
                 {...register("password")}

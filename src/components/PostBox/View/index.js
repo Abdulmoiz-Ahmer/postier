@@ -45,15 +45,6 @@ export const View = function ({ transformToCapitalized, t }) {
           computer={16}
           id="postContent1"
         >
-          <Pagination
-            boundaryRange={0}
-            defaultActivePage={1}
-            ellipsisItem={null}
-            firstItem={null}
-            lastItem={null}
-            siblingRange={1}
-            totalPages={10}
-          />
           <Card.Group id="postList">
             <Card id="postCard">
               <Card.Content id="postCardInfo">
@@ -79,7 +70,9 @@ export const View = function ({ transformToCapitalized, t }) {
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
                   <Icon id="postFav" name="favorite" />
+                  <Icon name="favorite" />
                   <Icon id="postDel" name="user delete" />
+                  <Icon name="user delete" />
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>
@@ -108,8 +101,10 @@ export const View = function ({ transformToCapitalized, t }) {
               </Card.Content>
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
+                  <Icon id="postFav" name="favorite" />
                   <Icon name="favorite" />
                   <Icon id="postDel" name="user delete" />
+                  <Icon name="user delete" />
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>

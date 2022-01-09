@@ -31,7 +31,7 @@ export const View = function View({
                   {transformToCapitalized(t("full-name"))}
                 </label>
                 <input
-                  id="inputView"
+                  className="inputView"
                   placeholder={transformToCapitalized(t("full-name"))}
                   {...register("fullName")}
                 />
@@ -48,7 +48,7 @@ export const View = function View({
                   {transformToCapitalized(t("email"))}
                 </label>
                 <input
-                  id="inputView"
+                  className="inputView"
                   placeholder={transformToCapitalized(t("email"))}
                   {...register("email")}
                 />
@@ -65,7 +65,7 @@ export const View = function View({
                   {transformToCapitalized(t("post-box-number"))}
                 </label>
                 <input
-                  id="inputView"
+                  className="inputView"
                   placeholder={transformToCapitalized(t("post-box-number"))}
                   {...register("postBoxNumber")}
                 />
@@ -82,7 +82,7 @@ export const View = function View({
                   {transformToCapitalized(t("password"))}
                 </label>
                 <input
-                  id="inputView"
+                  className="inputView"
                   placeholder={transformToCapitalized(t("password"))}
                   {...register("password")}
                 />
@@ -99,7 +99,7 @@ export const View = function View({
                   {transformToCapitalized(t("confirm-password"))}
                 </label>
                 <input
-                  id="inputView"
+                  className="inputView"
                   placeholder={transformToCapitalized(t("confirm-password"))}
                   {...register("confirmPassword")}
                 />
