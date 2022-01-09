@@ -4,6 +4,8 @@ export const View = function View({
   changeLanguage,
   t,
   transformToCapitalized,
+  showLoggedOut,
+  logOut,
 }) {
   return (
     <Menu size="huge" id="navBar">
@@ -21,14 +23,17 @@ export const View = function View({
           name="al"
           onClick={() => changeLanguage("al")}
         />
-        <span className="pipeSeparator">|</span>
-
-        <Button animated id="logBtn">
-          <Button.Content visible> Logout</Button.Content>
-          <Button.Content hidden>
-            <Icon name="sign-out" />
-          </Button.Content>
-        </Button>
+        {showLoggedOut && (
+          <>
+            <span className="pipeSeparator">|</span>
+            <Button animated id="logBtn" onClick={logOut}>
+              <Button.Content visible> Logout</Button.Content>
+              <Button.Content hidden>
+                <Icon name="sign-out" />
+              </Button.Content>
+            </Button>
+          </>
+        )}
       </Menu.Item>
     </Menu>
   );
