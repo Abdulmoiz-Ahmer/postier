@@ -8,9 +8,7 @@ import {
   Button,
   Pagination,
 } from "semantic-ui-react";
-import { useNavigate } from "react-router-dom";
-export const View = function ({ transformToCapitalized, t }) {
-  const navigate = useNavigate();
+export const View = function ({ transformToCapitalized, t, openLetter }) {
   return (
     <Grid id="postBoxView" columns={2}>
       <Grid.Row>
@@ -112,7 +110,9 @@ export const View = function ({ transformToCapitalized, t }) {
               </Card.Content>
             </Card>
             <Button.Group className="fixedBtn" floated="right">
-              <Button className="fixedBtnBtn" size="large"></Button>
+              <Button className="fixedBtnBtn" size="large" onClick={openLetter}>
+                <Icon name="edit" />
+              </Button>
             </Button.Group>
           </Card.Group>
         </Grid.Column>
