@@ -362,14 +362,18 @@ body ::-webkit-scrollbar {
   font-size: 1.1em;
 }
 #letterBox .letterBtnPosition {
-  margin: 25px;
   display: flex;
   justify-content: flex-end;
+  border: initial;
 }
-
+#letterBox .letterFrom {
+  justify-content: flex-end;
+  padding: 0;
+  border: initial !important;
+}
 #letterBox .letterPosition {
   display: flex;
-  padding: 25px;
+  padding: 10px 25px;
 }
 
 #letterBox .description {
@@ -381,7 +385,27 @@ body ::-webkit-scrollbar {
   justify-content: flex-start;
   padding-left: 29px;
 }
-
+.senderInfoName input {
+  font-size: 1em !important ;
+  color: #0a184a !important;
+  font-weight: 600 !important;
+}
+#letterBox .ui.form {
+  padding: 0px 30px !important;
+  max-width: initial !important;
+}
+#letterBox .ui.form textarea:focus {
+  border: initial;
+  font-size: 1em;
+  background: transparent;
+  color: #0a184a;
+}
+.ui.form textarea {
+  border: initial;
+  font-size: 1em;
+  background: transparent;
+  color: #0a184a;
+}
 /* ================================ Media Queries================================== */
 
 @media (max-width: 1500px) {

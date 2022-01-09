@@ -8,7 +8,9 @@ import {
   Button,
   Pagination,
 } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 export const View = function ({ transformToCapitalized, t }) {
+  const navigate = useNavigate();
   return (
     <Grid id="postBoxView" columns={2}>
       <Grid.Row>
