@@ -70,9 +70,9 @@ export const View = function ({ transformToCapitalized, t, openLetter }) {
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
                   <Icon id="postFav" name="favorite" />
-                  <Icon name="favorite" />
+                  {/* <Icon name="favorite" /> */}
                   <Icon id="postDel" name="user delete" />
-                  <Icon name="user delete" />
+                  {/* <Icon name="user delete" /> */}
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>
@@ -102,16 +102,16 @@ export const View = function ({ transformToCapitalized, t, openLetter }) {
               <Card.Content id="postCardDetail">
                 <div className="postCardIcon">
                   <Icon id="postFav" name="favorite" />
-                  <Icon name="favorite" />
+                  {/* <Icon name="favorite" /> */}
                   <Icon id="postDel" name="user delete" />
-                  <Icon name="user delete" />
+                  {/* <Icon name="user delete" /> */}
                 </div>
                 <Card.Meta id="postTime">8:30am</Card.Meta>
               </Card.Content>
             </Card>
             <Button.Group className="fixedBtn" floated="right">
               <Button className="fixedBtnBtn" size="large" onClick={openLetter}>
-                <Icon name="edit" />
+                <Icon id="fixedEdit" name="edit" />
               </Button>
             </Button.Group>
           </Card.Group>

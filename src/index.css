@@ -100,9 +100,13 @@ body ::-webkit-scrollbar {
   font-size: 27px;
   color: #6f64ff;
   padding: 0.92857143em 0;
+  position: relative;
+  z-index: 66;
 }
 #languageOption {
   padding: 0.92857143em 0;
+  position: relative;
+  z-index: 66;
 }
 .inputView {
   padding: 14px !important;
@@ -177,7 +181,6 @@ body ::-webkit-scrollbar {
 }
 #postContent {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
 }
 #postList {
@@ -239,11 +242,11 @@ body ::-webkit-scrollbar {
   color: #0a184a;
 }
 
-.postCategory {
+#postBoxView .postCategory {
   font-family: "Poppins" !important;
 }
-.tabIcon {
-  font-size: 1.9em !important;
+#postBoxView .tabIcon {
+  font-size: 1.9em;
 }
 
 #postBoxView .ui.steps .step {
@@ -311,12 +314,15 @@ body ::-webkit-scrollbar {
   z-index: 99;
 }
 #postBoxView .fixedBtnBtn {
-  width: 2em;
   width: 3em;
   height: 3em;
   border-radius: 50%;
-  background: #d2c7f5a8;
-  border: 1px solid #8036dd;
+  background: #4b02ff;
+  box-shadow: 2px 2px 10px #01020c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #postPagination {
   justify-content: flex-end;
@@ -335,7 +341,6 @@ body ::-webkit-scrollbar {
 #letterBox {
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 /* letterbox */
 #letterBox .letterContent {
@@ -393,6 +398,7 @@ body ::-webkit-scrollbar {
 #letterBox .ui.form {
   padding: 0px 30px !important;
   max-width: initial !important;
+  height: 65vh;
 }
 #letterBox .ui.form textarea:focus {
   border: initial;
@@ -406,25 +412,37 @@ body ::-webkit-scrollbar {
   background: transparent;
   color: #0a184a;
 }
+#fixedEdit {
+  margin: initial;
+  padding: 0px 4px;
+}
+#postBoxView .ui.vertical.steps .step {
+  padding: 1.14285714em 0.5em;
+  justify-content: center;
+}
+
 /* ================================ Media Queries================================== */
 
 @media (max-width: 1500px) {
   #postBoxView .ui.vertical.steps .step {
     justify-content: center;
-    padding: 1.14285714em 1em;
+
     display: flex;
     align-items: center;
   }
-  .tabIcon {
-    font-size: 1.5em !important;
+  #postBoxView .tabIcon {
+    font-size: 1.5em;
   }
-  #postCategory {
-    font-size: 16px !important;
+  #postBoxView .postCategory {
+    font-size: 0.9em;
   }
 }
 @media (max-width: 1200px) {
   #postBoxView .ui.vertical.steps {
     flex-direction: row;
+  }
+  #postBoxView .ui.vertical.steps .step {
+    padding: 1em 0.5em;
   }
   #postList {
     margin: 4.5em 0;
@@ -438,6 +456,9 @@ body ::-webkit-scrollbar {
   #postPagination {
     right: -7px;
     top: 8rem;
+  }
+  #postBoxView .postCategory {
+    font-size: 1.1em;
   }
 }
 
@@ -458,5 +479,11 @@ body ::-webkit-scrollbar {
   #postPagination .item {
     margin-top: 10px;
     font-size: 11px;
+  }
+  #postBoxView .tabIcon {
+    font-size: 1.2em;
+  }
+  #postBoxView .postCategory {
+    font-size: 0.9em;
   }
 }
